@@ -1,0 +1,49 @@
+<div  class="centered-container">
+  
+    <div>
+      <h1 class="centered-title">Inventario Automotriz</h1>
+      
+      <!-- Lista desplegable -->
+      <div class="centered-title">
+        <label for="miSelect">Selecciona un usuario para poder ejecutar las acciones</label>
+      </div>
+      <select id="miSelect" [(ngModel)]="usuarioSeleccionado" (change)="onOptionChange()" class="centered-select">
+        <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{ usuario.nombre }} - {{ usuario.cargo.nombre }}</option>
+      </select>
+
+  
+      <!-- Tabla -->
+      <div class="centered-title">
+        <h2>Mercancía</h2>
+      </div>
+      <div>
+        <!-- Botón para agregar registros -->
+        <button type="button" class="btn btn-success" [disabled]="!usuarioElegido" (click)="agregarRegistro()">
+            Agregar mercancía
+        </button>
+        
+        <p class="txt-error">{{mismoUsuario}}</p>
+      </div>
+      <table class="styled-table centered-table">
+        <thead>
+            <tr>
+                <th *ngFor="let columna of columnas">{{ columna.nombre }}</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mercancia of mercancias">
+                <td class="centered-cell" *ngFor="let columna of columnas">{{ mercancia[columna.clave] }}</td>
+                <td>
+                    <div class="button-container">
+                        <button type="button" class="btn btn-sm btn-warning" [disabled]="!usuarioElegido" (click)="editarRegistro(mercancia)">Editar</button>
+                        <button type="button" class="btn btn-sm btn-danger" [disabled]="!usuarioElegido" (click)="eliminarRegistro(mercancia)">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+  

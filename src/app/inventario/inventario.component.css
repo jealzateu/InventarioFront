@@ -1,0 +1,73 @@
+/* Centrar elementos horizontalmente y agregar márgenes */
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.centered-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+
+/* Centrar el select horizontalmente */
+.centered-select {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
+}
+
+/* Centrar la tabla horizontalmente */
+.centered-table {
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* Estilo de la tabla */
+.styled-table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+  
+.styled-table th, .styled-table td {
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    text-align: center;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para el contenedor de botones */
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+  
+/* Estilo para los botones */
+.btn-sm {
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.txt-error {
+    font-size: 14px;
+    color: red;
+    float: right;
+}
